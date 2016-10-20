@@ -24,24 +24,20 @@ public class BMI {
         bmi1 = waga/ (wzrost*wzrost); // wzór na obliczanie BMI  masa ciała/wzrost do kwadratu
 
         System.out.println(imię + "," + " twoje BMI to " + bmi1);
-       if (bmi1 < 18.5)
-       {
+        if (bmi1 < 18.5)
+        {
            System.out.println("Masz niedowagę. Musisz jeść więcej");
-       }
-       else if (bmi1 <=24.99)
-       {
+        }
+        else if (bmi1 <=24.99)
+        {
            System.out.println("Twoja waga jest prawidłowa. Brawo!");
-       }
+        }
         else
-       {
+        {
            System.out.println("Masz nadwagę. Zacznij ćwiczyć lub mniej jeść");
-       }
-
-
-
-
+        }
     }
 
 
-
+// nie uzywamy poskich znaków, piszemy po ang, unikamy cyfr,
 }
