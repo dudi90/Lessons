@@ -62,23 +62,24 @@ public class Kalkulator
         else
         {
             System.out.println("Wrong data");
+            return;
         }
         System.out.println("Result: " + result);
     }
     public static double addition (double a, double b)
     {
-        double wynik = a+b;
-        return wynik;
+        double result = a+b;
+        return result;
     }
     public static double subtraction (double a, double b)
     {
-        double wynik = a-b;
-        return wynik;
+        double result = a-b;
+        return result;
     }
     public static double multiplication (double a, double b)
     {
-        double wynik = a*b;
-        return wynik;
+        double result = a*b;
+        return result;
     }
     public static double division(double a, double b)
     {
@@ -89,8 +90,8 @@ public class Kalkulator
         }
         else
         {
-            double wynik = a / b;
-            return wynik;
+            double result = a / b;
+            return result;
         }
     }
 //    public static int factorialFor ()
@@ -129,10 +130,12 @@ public class Kalkulator
     public static int factorial (int d)
     {
         int result = 1;
-        if (d < 0) {
+        if (d < 0)
+        {
             System.out.println("Wrong data");
             result = 0;
-        } else
+        }
+        else
         {
             for (int i = 1; i < d + 1; i++)
             {
@@ -150,7 +153,18 @@ public class Kalkulator
 //        {
 //            System.out.println(names[i]);
 //        }
-    }
+//     public static void arrayItteration ()
+//    {
+//        int[] array = {2,4,6,8,10};
+//        int sum =0;
+//
+//        for (int i=0; i<array.length; i++)
+//        {
+//            System.out.println(array[i]);
+//
+//        }
+//    }
+}
 
 // Poprawienie dzielenia
 // Dodać factorial do kalkulatora
