@@ -75,3 +75,37 @@ public class Korepetycje {
     // przepisać działania na funkcjach
 }
 // for, while,
+
+//    public static int factorialFor ()
+//    {
+//        for (int i=1; i!=11 ; i++ )
+//        {
+//            System.out.println(i);
+//        }
+//        return 0;
+//    }
+//
+//    public static int factorialWhile ()
+//    {
+//        int i=1;
+//        while (i<11)
+//        {
+//            i++;
+//            System.out.println(i);
+//
+//        }
+//        return 0;
+//
+//    }
+//    public static int factorialDoWhile ()
+//    {
+//        int i= 12;
+//        do
+//        {
+//            i++;
+//            System.out.println(i);
+//
+//        } while (i<11);
+//        return 0;
+//    }
+//
