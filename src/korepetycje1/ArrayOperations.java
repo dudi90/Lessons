@@ -6,30 +6,12 @@ public class ArrayOperations
 {
     public static void main(String[] args)
     {
-
-//        arrayFill(2);
-//        listArray(arrayFill(3));
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number of arrays");
-        int number = scanner.nextInt();
-        arraySum(arrayFill(number));
-//
-////        System.out.println(max(userNumbers));
-//        int[] table = arrayFill(10);
+//        int[] table = {2,4,5,6,};
 //        listArray(table);
+//        max(table);
 
-//        System.out.println(avg(table));
-
-//        int[] number ={10,10,20,60};
-//        listArray(number);
-//        min(number);
-//        max(number);
-//        avg(number);
-
-//        System.out.println(avg(number));
-//        System.out.println(min(number));
-//        System.out.println(max(number));
     }
+
     public static int[] arrayFill (int number)
     {
         int[] array = new int[number];
@@ -43,6 +25,7 @@ public class ArrayOperations
         }
         return array;
     }
+
     public static void listArray(int[] array)
     {
         for (int i=0; i<array.length;i++)
@@ -50,6 +33,7 @@ public class ArrayOperations
             System.out.println("Number " + (i+1) + " is " + array[i]);
         }
     }
+
     public static int min(int[] array)
     {
         int min=array[0];
@@ -60,8 +44,10 @@ public class ArrayOperations
                 min=array[i];
             }
         }
+        System.out.println("Minimum element of array is " + min);
         return min;
     }
+
     public static int max(int[] array)
     {
         int max=array[0];
@@ -72,8 +58,10 @@ public class ArrayOperations
                 max=array[i];
             }
         }
+        System.out.println("Maximum element of array is " + max);
         return max;
     }
+
     public static int avg(int[] array)
     {
         int sum =0;
@@ -82,19 +70,17 @@ public class ArrayOperations
         for (int i=0; i<array.length; i++)
         {
             sum = array[i] + sum;
-            avg = sum/array.length;
-
         }
+        avg = sum/array.length;
+        System.out.println("Average elements of array is " + avg);
         return avg;
     }
 
-    public static int arraySum (int[] array)
-    {
-        int sum =0;
+    public static int arraySum (int[] array) {
+        int sum = 0;
 
-        for (int x=0; x<array.length; x++)
-        {
-            sum += array[x];
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
         }
         System.out.println("Sum of array elements is: " + sum);
         return sum;

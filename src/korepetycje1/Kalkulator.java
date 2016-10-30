@@ -10,19 +10,26 @@ public class Kalkulator
         double numberTwo = 0;
         int factorialNumber = 0;
         String operationNumber;
-        String[] menu = {"1", "2", "3", "4", "5","6"};
+        String[] menu = {"1", "2", "3", "4", "5","6","7","8","9"};
 
         System.out.println("Calculator. Select an operation by pressing right number");
-        System.out.println("Addition - " + "      1");
-        System.out.println("Subtraction - " + "   2");
-        System.out.println("Multiplication - " + "3");
-        System.out.println("Division - " + "      4");
-        System.out.println("Factorial - " + "     5");
-        System.out.println("Sum of array - " + "  6");
+        System.out.println("Addition - " + "                   1");
+        System.out.println("Subtraction - " + "                2");
+        System.out.println("Multiplication - " + "             3");
+        System.out.println("Division - " + "                   4");
+        System.out.println("Factorial - " + "                  5");
+        System.out.println("Sum of array - " + "               6");
+        System.out.println("MIN element of array - " + "       7");
+        System.out.println("MAX element of array - " + "       8");
+        System.out.println("Average elements of array - " + "  9");
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter operation number:");
         operationNumber = scanner.next();
+        System.out.println("Enter number 1:");
+        numberOne = scanner.nextDouble();
+        System.out.println("Enter number 2:");
+        numberTwo = scanner.nextDouble();
         double result = 0.0;
 
         if (operationNumber.equals(menu[0]))
@@ -45,13 +52,31 @@ public class Kalkulator
         {
             System.out.println("Enter natural number");
             factorialNumber = scanner.nextInt();
-            result = factorial(factorialNumber);
+            factorial(factorialNumber);
         }
         else if (operationNumber.equals(menu[5]))
         {
-            System.out.println("Enter number of array elemenetes:");
-            int number= scanner.nextInt();
+            System.out.println("Enter number of array elements:");
+            int number = scanner.nextInt();
             arraySum(arrayFill(number));
+        }
+        else if (operationNumber.equals(menu[6]))
+        {
+            System.out.println("Enter number of array elements:");
+            int number = scanner.nextInt();
+            ArrayOperations.min(arrayFill(number));
+        }
+        else if (operationNumber.equals(menu[7]))
+        {
+            System.out.println("Enter number of array elements:");
+            int number = scanner.nextInt();
+            ArrayOperations.max(arrayFill(number));
+        }
+        else if (operationNumber.equals(menu[8]))
+        {
+            System.out.println("Enter number of array elements:");
+            int number = scanner.nextInt();
+            ArrayOperations.avg(arrayFill(number));
         }
         else
         {
@@ -62,11 +87,6 @@ public class Kalkulator
 
     public static double addition(double numberOne, double numberTwo)
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number 1:");
-        numberOne = scanner.nextDouble();
-        System.out.println("Enter number 2:");
-        numberTwo = scanner.nextDouble();
         double result = numberOne + numberTwo;
         System.out.println("Result: " + result);
         return result;
@@ -74,11 +94,6 @@ public class Kalkulator
 
     public static double subtraction(double numberOne, double numberTwo)
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number 1:");
-        numberOne = scanner.nextDouble();
-        System.out.println("Enter number 2:");
-        numberTwo = scanner.nextDouble();
         double result = numberOne - numberTwo;
         System.out.println("Result: " + result);
         return result;
@@ -86,11 +101,6 @@ public class Kalkulator
 
     public static double multiplication(double numberOne, double numberTwo)
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number 1:");
-        numberOne = scanner.nextDouble();
-        System.out.println("Enter number 2:");
-        numberTwo = scanner.nextDouble();
         double result = numberOne * numberTwo;
         System.out.println("Result: " + result);
         return result;
@@ -98,11 +108,6 @@ public class Kalkulator
 
     public static double division(double numberOne, double numberTwo)
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number 1:");
-        numberOne = scanner.nextDouble();
-        System.out.println("Enter number 2:");
-        numberTwo = scanner.nextDouble();
         if (numberTwo == 0)
         {
             System.out.println("Do not divide by 0");
@@ -161,4 +166,5 @@ public class Kalkulator
     }
 }
 
-//dodać obliczanie wartośći z tablicy do kalkulatora - 1 wariant: zapytać użytkownika ile chce elementów.
+// dodać min, max, avg - nieprzepisując tylko z arrayOperations
+// algorytm sortowania bąbelowego
