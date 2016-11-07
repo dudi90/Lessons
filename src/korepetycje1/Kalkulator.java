@@ -165,6 +165,3 @@ public class Kalkulator
         return sum;
     }
 }
-
-// dodać min, max, avg - nieprzepisując tylko z arrayOperations
-// algorytm sortowania bąbelowego

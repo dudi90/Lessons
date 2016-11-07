@@ -68,15 +68,13 @@ public class MatrixOperations
                     matrix[i][j] = 1;
                 }
                 else
-                    {
-                        matrix[i][j] = 0;
-                    }
+                {
+                    matrix[i][j] = 0;
+                }
             }
         }
         return matrix;
     }
-}
 
-//napisać podobną do fillmatrix metodę, ale żeby wypiswała elemtenty w pionie - z góry do dołu
-//metoda która zwróci macierz, która przyjmuje 2 rugmenty ilość wierszy, ilość kolumn. Na głównej lini(przekątna) wypisze 1 a poza nią 0
-//jak to wyświetlać jeśli wartości są 2 lub 3 cyfrowe 0Podpowiedź, poszukać wartości maksymalnej)
+}
+//jak to wyświetlać jeśli wartości są 2 lub 3 cyfrowe 0Podpowiedź, poszukać wartości maksymalnej) ile znaków ma największy element
