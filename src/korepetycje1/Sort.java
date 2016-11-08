@@ -8,13 +8,13 @@ public class Sort
     public static void main(String[] args)
     {
         int[] array = {2,-2,5,-6,8,-9,10,12,8,0};
+        ArrayOperations.listArray(bubbleSortHomeWork(array));
+        System.out.println();
         ArrayOperations.listArray(selectionSortMin(array));
         System.out.println();
         ArrayOperations.listArray(selectionSortMax(array));
         System.out.println();
         ArrayOperations.listArray(insertionSort(array));
-        System.out.println();
-        ArrayOperations.listArray(bubbleSort(array));
 
     }
     public static int[] bubbleSort (int[] array)
@@ -73,7 +73,7 @@ public class Sort
         }
         ArrayOperations.listArray(array);
     }
-    
+
     public static int[] bubbleSortHomeWork (int[] array)
     {
         for (int i=0;i<array.length;i++)
@@ -90,53 +90,43 @@ public class Sort
         }
         return array;
     }
-    public static int[] selectionSortMin (int[] array)
+    public static int[] selectionSortMin (int[] array) //sortowanie od najmniejszej wartości
     {
-        for (int i=0;i<array.length;i++)
+        for (int i=0;i<array.length-1;i++)
         {
-            int minValue = array[i];
-            int minIndex = i;
-            for (int j=i;j<array.length;j++)
+            int index = i;
+            for (int j=i+1;j<array.length;j++)
             {
-                if (array[j] < minValue)
+                if (array[j] < array[index])
                 {
-                    minValue = array[j];
-                    minIndex = j;
+                    index = j;
+                    int minValue = array[index];
+                    array[index] = array[i];
+                    array[i] = minValue;
                 }
-            }
-            if (minValue < array[i])
-            {
-                int tmp = array[i];
-                array[i] = array[minIndex];
-                array[minIndex] = tmp;
             }
         }
         return array;
     }
-    public static int[] selectionSortMax (int[] array)
+    public static int[] selectionSortMax (int[] array) //sortowanie od największej wartości
     {
-        for (int i=0;i<array.length;i++)
+        for (int i=0;i<array.length-1;i++)
         {
-            int maxValue = array[i];
-            int maxIndex = i;
-            for (int j=i;j<array.length;j++)
+            int index = i;
+            for (int j=i+1;j<array.length;j++)
             {
-                if (array[j] > maxValue)
+                if (array[j] > array[index])
                 {
-                    maxValue = array[j];
-                    maxIndex = j;
+                    index = j;
+                    int maxValue = array[index];
+                    array[index] = array[i];
+                    array[i] = maxValue;
                 }
-            }
-            if (maxValue > array[i])
-            {
-                int tmp = array[i];
-                array[i] = array[maxIndex];
-                array[maxIndex] = tmp;
             }
         }
         return array;
     }
-    public static int[] insertionSort (int[] array)
+   public static int[] insertionSort (int[] array)
     {
         for (int i=1;i<array.length;i++)
         {
