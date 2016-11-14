@@ -164,4 +164,5 @@ public class Kalkulator
         System.out.println("Sum of array elements is: " + sum);
         return sum;
     }
+
 }

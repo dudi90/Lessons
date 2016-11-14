@@ -77,4 +77,3 @@ public class MatrixOperations
     }
 
 }
-//jak to wyświetlać jeśli wartości są 2 lub 3 cyfrowe 0Podpowiedź, poszukać wartości maksymalnej) ile znaków ma największy element

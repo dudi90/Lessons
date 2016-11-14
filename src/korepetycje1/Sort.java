@@ -1,5 +1,7 @@
 package korepetycje1;
 
+import java.util.Random;
+
 /**
  * Created by Tomek on 2016-10-31.
  */
@@ -8,18 +10,13 @@ public class Sort
     public static void main(String[] args)
     {
         int[] array = {2,-2,5,-6,8,-9,10,12,8,0};
-        ArrayOperations.listArray(bubbleSortHomeWork(array));
-        System.out.println();
-        ArrayOperations.listArray(selectionSortMin(array));
-        System.out.println();
-        ArrayOperations.listArray(selectionSortMax(array));
-        System.out.println();
-        ArrayOperations.listArray(insertionSort(array));
-
+//        bubbleSort(generateArray(10000));
+//        insertionSort(generateArray(10000));
+//        selectionSortOne(generateArray(10000));
     }
     public static int[] bubbleSort (int[] array)
     {
-        int counter = 0;
+        long counter = 0;
         for (int i=0;i<array.length;i++)
         {
             for (int j=1;j<array.length-i;j++)
@@ -29,11 +26,11 @@ public class Sort
                     int tmp = array[j-1];
                     array[j-1] = array[j];
                     array[j] = tmp;
+                    counter++;
                 }
-                counter++;
             }
         }
-        System.out.println(counter);
+        System.out.println("BubbleSort: " + counter);
         return array;
     }
 
@@ -90,7 +87,7 @@ public class Sort
         }
         return array;
     }
-    public static int[] selectionSortMin (int[] array) //sortowanie od najmniejszej wartości
+    public static int[] selectionSortMin (int[] array) //sortowanie od najmniejszej wartości //co przyjmuje i zwraca, jaki algorytm używa, omówienie działania algorytmu - ogólnie, implementacja algorytmu
     {
         for (int i=0;i<array.length-1;i++)
         {
@@ -100,11 +97,11 @@ public class Sort
                 if (array[j] < array[index])
                 {
                     index = j;
-                    int minValue = array[index];
-                    array[index] = array[i];
-                    array[i] = minValue;
                 }
             }
+            int tmp = array[index];
+            array[index] = array[i];
+            array[i] = tmp;
         }
         return array;
     }
@@ -118,16 +115,17 @@ public class Sort
                 if (array[j] > array[index])
                 {
                     index = j;
-                    int maxValue = array[index];
-                    array[index] = array[i];
-                    array[i] = maxValue;
                 }
             }
+            int tmp = array[index];
+            array[index] = array[i];
+            array[i] = tmp;
         }
         return array;
     }
    public static int[] insertionSort (int[] array)
     {
+        long counter=0;
         for (int i=1;i<array.length;i++)
         {
             int temp = array[i];
@@ -138,12 +136,62 @@ public class Sort
                 array[j] = array[j+1];
                 array[j+1] = tmp;
                 j--;
+                counter++;
             }
+        }
+        System.out.println("InsertionSort: " + counter);
+        return array;
+    }
+    public static int[] bubbleSortOne (int[] array)
+    {
+        for (int i=0;i<array.length;i++)
+        {
+            for (int j=1;j<array.length-i;j++)
+            {
+                if (array[j-1] > array[j])
+                {
+                    int tmp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = tmp;
+
+                }
+            }
+        }
+        return array;
+    }
+    public static int[] selectionSortOne (int[] table)
+    {
+        long counter=0;
+        for (int i=0;i<table.length-1;i++)
+        {
+            int indexMax=i;
+            for (int j=i+1;j<table.length;j++)
+            {
+                if (table[indexMax] < table[j] )
+                {
+                    indexMax = j;
+                    counter++;
+                }
+            }
+            int tmp = table[indexMax];
+            table[indexMax] = table[i];
+            table[i] = tmp;
+            counter++;
+
+        }
+        System.out.println("SelectionSort: " + counter);
+        return table;
+    }
+    public static int[] generateArray (int size)
+    {
+        Random random = new Random();
+        random.nextInt();
+        int[] array = new int[size];
+        for (int i=0;i<size;i++)
+        {
+            array[i] = random.nextInt() %100;
         }
         return array;
     }
 }
 
-// napisać jeszcze raz funkcje sortowania bąbelkowego
-// funckja selectionSort bez indexofMax
-// sortowanie przez wstawianie InsertionSort - napisać

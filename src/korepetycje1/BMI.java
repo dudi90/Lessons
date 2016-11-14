@@ -11,6 +11,7 @@ public class BMI {
         String imię;
         double bmi1 = 0;
 
+
         Scanner BMI = new Scanner(System.in);
         System.out.println("Podaj swoje imię");
         imię = BMI.next();
