@@ -77,3 +77,4 @@ public class MatrixOperations
     }
 
 }
+// schemat blokowy średniej z tablicy, max w tablicy, minimum w tablicy, dodawanie macierzy

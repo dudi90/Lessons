@@ -86,4 +86,18 @@ public class ArrayOperations
         System.out.println("Sum of array elements is: " + sum);
         return sum;
     }
+    public static int[] mergeArrays (int[] leftArray, int[] rightArray)
+    {
+        int[] array = new int[leftArray.length + rightArray.length];
+        for (int i=0;i<leftArray.length;i++)
+        {
+            array[i] = leftArray[i];
+        }
+        for (int i=0;i<rightArray.length;i++)
+        {
+            array[leftArray.length+i] = rightArray[i];
+        }
+        return array;
+    }
+
 }
